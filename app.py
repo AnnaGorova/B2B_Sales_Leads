@@ -80,7 +80,6 @@ with st.sidebar:
     
     model = st.selectbox("Модель", [
         "openrouter/free",
-        "meta-llama/llama-3.3-70b-instruct:free",
         "openai/gpt-oss-20b:free"
     ])
     temperature = st.slider("Температура", 0.0, 1.5, 0.7, 0.1)
