@@ -1,5 +1,7 @@
 # OpenRouter AI чатбот
 
+🔗 **Живий застосунок:** https://chatbotaipython.streamlit.app/
+
 Простий чатбот на Streamlit з інтеграцією OpenRouter REST API.
 
 ## Локальний запуск
