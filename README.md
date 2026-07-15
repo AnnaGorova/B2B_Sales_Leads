@@ -1,26 +1,37 @@
-# OpenRouter AI чатбот
+# B2B Sales Leads Generator
 
-🔗 **Живий застосунок:** https://chatbotaipython.streamlit.app/
+## Опис
+CrewAI-застосунок для генерації B2B Sales Leads з використанням багатоагентного підходу.
 
-Простий чатбот на Streamlit з інтеграцією OpenRouter REST API.
+## Сценарій
+Користувач вводить опис B2B-продукту, обирає модель та температуру, натискає кнопку запуску. 
+CrewAI послідовно створює:
+1. Портрет ідеального клієнта
+2. Канали пошуку
+3. Персоналізовані повідомлення
+4. Критерії оцінювання
+5. Фінальний план продажів
 
-## Локальний запуск
+## Агенти
+| Агент | Роль |
+|-------|------|
+| icp_researcher | Дослідник клієнтів |
+| lead_planner | Фахівець із пошуку клієнтів |
+| outreach_writer | Автор повідомлень |
+| sales_reviewer | Фахівець з оцінювання клієнтів |
 
-1. Встановіть залежності:
-   pip install -r requirements.txt
+## Завдання
+| Завдання | Агент | Контекст |
+|----------|-------|----------|
+| icp_task | icp_researcher | - |
+| channels_task | lead_planner | icp_task |
+| outreach_task | outreach_writer | icp_task, channels_task |
+| qualification_task | sales_reviewer | icp_task, channels_task, outreach_task |
+| final_task | icp_researcher | Всі попередні |
 
-2. Створіть файл `.streamlit/secrets.toml` (не комітьте його!) з вмістом:
-   OPENROUTER_API_KEY = "ваш_ключ"
+## Встановлення та запуск
 
-   Або створіть `.env`:
-   OPENROUTER_API_KEY=ваш_ключ
-
-3. Запустіть:
-   streamlit run app.py
-
-## Деплой на Streamlit Community Cloud
-
-1. Запуште репозиторій на GitHub (без ключів!).
-2. На share.streamlit.io підключіть репозиторій.
-3. У розділі App settings → Secrets додайте:
-   OPENROUTER_API_KEY = "ваш_ключ"
+### 1. Клонувати репозиторій
+```bash
+git clone <repository-url>
+cd b2b-sales-crew

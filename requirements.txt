@@ -1,4 +1,2 @@
-streamlit
-requests
-pandas
-python-dotenv
+streamlit>=1.36
+crewai>=0.80
