@@ -1,4 +1,7 @@
 # B2B Sales Leads Generator
+🔗 Живий застосунок: https://b2bsalesleads.streamlit.app/
+
+Багатоагентний застосунок на Streamlit + CrewAI для генерації B2B-лідів через OpenRouter REST API.
 
 ## Опис
 CrewAI-застосунок для генерації B2B Sales Leads з використанням багатоагентного підходу.
